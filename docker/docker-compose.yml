@@ -1,0 +1,14 @@
+services:
+  php:
+    container_name: ta-tikoma_bind_php
+    build: 
+      args:
+        user: ${USER}
+        uid: ${USER_ID}
+      context: ./php
+      dockerfile: Dockerfile
+    volumes:
+      - "../:/var/www/html"
+    restart: always
+    environment:
+      COMPOSER_MEMORY_LIMIT: ${COMPOSER_MEMORY_LIMIT}

@@ -1,0 +1,21 @@
+{
+    "name": "ta-tikoma/bind",
+    "description": "bind method for binding argument to callable",
+    "keywords": ["callable", "binding", "functional"],
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "src/bind.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Ni Shi"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^12.4"
+    }
+}
