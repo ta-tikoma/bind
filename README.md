@@ -23,5 +23,4 @@ $result = 'Hello World'
 ```php
 $result = 'Hello World'
     |> bind(flip(explode(...)), ' ')
-```
     |> bind(array_filter(...), bind(str_starts_with(...), 'H'))```
