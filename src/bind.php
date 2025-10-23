@@ -8,10 +8,12 @@ if (! function_exists('TaTikoma\bind')) {
     /**
      * For binding arguments to method
      *
+     * @template TFirst
      * @template TReturn
-     * @param  callable(mixed...): TReturn  $callable
+     *
+     * @param  callable(TFirst, mixed...): TReturn  $callable
      * @param  mixed...  $args
-     * @return callable(mixed): TReturn
+     * @return callable(TFirst): TReturn
      */
     function bind(callable $callable, mixed ...$args): Closure
     {
