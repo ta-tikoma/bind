@@ -5,6 +5,7 @@ declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
 
 use function TaTikoma\bind;
+use function TaTikoma\flip;
 
 final class BindTest extends TestCase
 {
@@ -16,12 +17,20 @@ final class BindTest extends TestCase
         $this->assertEquals(1, (new ReflectionFunction($after))->getNumberOfParameters());
     }
 
-    public function testResult(): void
+    public function testBindResult(): void
     {
         $text = 'some-text';
         $offset = 0;
         $length = 3;
 
         $this->assertEquals(substr($text, $offset, $length), bind(substr(...), $offset, $length)($text));
+    }
+
+    public function testFlipResult(): void
+    {
+        $text = 'some-text';
+        $seporator = '-';
+
+        $this->assertEquals(explode($seporator, $text), flip(explode(...))($text, $seporator));
     }
 }

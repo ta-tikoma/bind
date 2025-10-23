@@ -20,3 +20,19 @@ if (! function_exists('TaTikoma\bind')) {
         return static fn(mixed $arg) => $callable($arg, ...$args);
     }
 }
+
+if (! function_exists('TaTikoma\flip')) {
+    /**
+     * For revers arguments
+     *
+     * @template TLast
+     * @template TReturn
+     *
+     * @param  callable(mixed..., TLast): TReturn  $callable
+     * @return callable(TLast, mixed...): TReturn
+     */
+    function flip(callable $callable): Closure
+    {
+        return static fn(mixed ...$args) => $callable(...array_reverse($args));
+    }
+}
