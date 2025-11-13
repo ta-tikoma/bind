@@ -4,6 +4,8 @@
 
 ## Install
 
+`composer require ta-tikoma/bind`
+
 ## Examples
 
 ### Example 1
