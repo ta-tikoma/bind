@@ -1,6 +1,6 @@
 # BIND
 
-## There is only two functions in this package: `bind` and `flip`
+There is only two functions in this package: `bind` and `flip`, for make you code short.
 
 ## Install
 
