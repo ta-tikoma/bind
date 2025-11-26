@@ -8,13 +8,13 @@
 
 ## Examples
 
-### Example 1
+### Example 1 (Simple)
 #### Before
 `array_map(static fn (string $s) => substr($s, 2), ['a_bar', 'a_foo', 'a_boo'])`
 #### After
 `array_map(bind(substr(...), 2), ['a_bar', 'a_foo', 'a_boo'])`
 
-### Example 2
+### Example 2 (Pipe)
 #### Before
 ```php
 $result = 'Hello World'
@@ -26,4 +26,14 @@ $result = 'Hello World'
 $result = 'Hello World'
     |> bind(flip(explode(...)), ' ')
     |> bind(array_filter(...), bind(str_starts_with(...), 'H'))
+```
+
+### Example 3 (Collection)
+#### Before
+```php
+$result = collect(['1', '2', '3'])->map(static fn (string $number) => (int) $number);
+```
+#### After
+```php
+$result = collect(['1', '2', '3'])->map(bind(intval(...)));
 ```
